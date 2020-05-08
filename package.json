@@ -1,0 +1,29 @@
+{
+  "name": "slackapp",
+  "version": "1.0.0",
+  "description": "A simple slack bot for fun.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cajual/slackapp.git"
+  },
+  "keywords": [
+    "slack",
+    "app"
+  ],
+  "author": "Ryan Gibbons <ryan.david.gibbons@gmail.com>",
+  "license": "GNU General Public License v3.0",
+  "bugs": {
+    "url": "https://github.com/cajual/slackapp/issues"
+  },
+  "homepage": "https://github.com/cajual/slackapp#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
+    "slackbots": "^1.2.0"
+  }
+}
