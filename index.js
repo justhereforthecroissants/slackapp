@@ -9,6 +9,7 @@ const bot = new SlackBot({
     name: 'bbot'
 })
 
+// Start bot
 bot.on('start', () => {
     const params = {
         icon_emoji: ':alien:'
@@ -21,6 +22,30 @@ bot.on('start', () => {
     );
 })
 
+// Error handler
 bot.on('error', (err) => {
     console.log(err);
 })
+
+// Message handler
+bot.on('message', (data) => {
+    if(data.type !== 'message' || data.subtype === 'bot_message') {
+        return;
+    }
+    messanger(data.text);
+})
+
+// Response handler
+function messanger(message) {
+    if(message.includes('announcements')) {
+        announce()
+    }
+}
+
+// Announcements
+function announce() {
+  bot.postMessageToChannel(
+    'implementations',
+    ':point_right: There are no announcements at this time! :cry:'
+  );
+}
